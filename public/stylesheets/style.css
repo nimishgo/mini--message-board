@@ -40,6 +40,18 @@ main ul {
 
 }
 
+.message h2 {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.message p {
+  overflow-wrap: break-word;
+}
+
 .message:after {
   -moz-transform: skewX(-15deg);
   -ms-transform: skewX(-15deg);
@@ -102,3 +114,4 @@ svg {
   fill: #fff;
   width: 20px;
 }
+
