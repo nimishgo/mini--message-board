@@ -3,30 +3,15 @@ const router = express.Router();
 const formatDate = require("../public/javascripts/formatData.js");
 
 /* GET home page. */
-const messages = [
-  {
-    text: "Hi!",
-    user: "Nimish",
-    added: formatDate(new Date()),
-  },
-  {
-    text: "Hello World!",
-    user: "Yash",
-    added: formatDate(new Date()),
-  },
-];
 
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Message Board", messages: messages });
-});
+const message_controller = require("../controllers/messageController");
 
-router.post("/new", function (req, res) {
-  messages.push({
-    text: req.body.message,
-    user: req.body.user,
-    added: formatDate(new Date()),
-  });
-  res.redirect("/");
-});
+/* GET home page. */
+router.get("/", message_controller.get_index);
+
+// Get new message form
+router.get("/new", message_controller.get_new);
+
+router.post("/new", message_controller.post_new);
 
 module.exports = router;
