@@ -1,12 +1,33 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
-var indexRouter = require("./routes/index");
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 require("dotenv").config();
 
-var app = express();
+const indexRouter = require("./routes/index");
+
+const app = express();
+
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
+// const uri = "mongodb://localhost:27017/db";
+main().catch((err) => console.error(err));
+
+async function main() {
+  try {
+    mongoose.set("strictQuery", false);
+
+    await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error.message);
+  }
+}
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
