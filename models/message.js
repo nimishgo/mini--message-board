@@ -6,12 +6,12 @@ const Schema = mongoose.Schema;
 const MessageSchema = new Schema({
   user: { type: String, required: true, maxLength: 20 },
   text: { type: String, required: true },
-  createdAt: { type: Date },
+  createdAt: { type: Date, default: Date.now },
 });
 
-MessageSchema.virtual("date_formatted").get(function () {
+MessageSchema.virtual("createdAt_formatted").get(function () {
   return DateTime.fromJSDate(this.createdAt).toLocaleString(
-    DateTime.DATETIME_MED
+    DateTime.DATETIME_SHORT
   );
 });
 
