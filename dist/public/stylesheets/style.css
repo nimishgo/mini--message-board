@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  flex: 1;
+  padding: 10px;
+}
+
+main ul {
+  width: 100%;
+}
+
+.message {
+  min-width: 100%;
+  margin-bottom: 60px;
+  background-color: rgb(169, 169, 221);
+  color: white;
+  padding: 15px;
+  position: relative;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.message div {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+}
+
+.message h2 {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.message p {
+  overflow-wrap: break-word;
+}
+
+.message:after {
+  -moz-transform: skewX(-15deg);
+  -ms-transform: skewX(-15deg);
+  -webkit-transform: skewX(-15deg);
+  transform: skewX(-15deg);
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 25px;
+  border-width: 15px 30px 0 0;
+  border-style: solid;
+  border-color: rgb(169, 169, 221) transparent;
+}
+
+a {
+  text-decoration: none;
+  background-color: rgb(96, 96, 143);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  min-width: 100%;
+  text-align: center;
+}
+
+a:hover, button:hover {
+  transform: scale(1.03);
+}	
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+input, textarea {
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+button {
+  width: 40%;
+  padding: 10px;
+  background-color: rgb(96, 96, 143);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+svg {
+  fill: #fff;
+  width: 20px;
+}
+
